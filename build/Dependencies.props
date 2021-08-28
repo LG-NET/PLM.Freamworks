@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup Label="Package Versions">
+    <!--Microsoft-->
+    <MicrosoftAspNetCoreMvcRazorRuntimeCompilationPackageVersion>5.0.9</MicrosoftAspNetCoreMvcRazorRuntimeCompilationPackageVersion>
+  </PropertyGroup>
+</Project>

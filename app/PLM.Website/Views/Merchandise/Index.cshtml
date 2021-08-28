@@ -1,0 +1,223 @@
+﻿@{
+    ViewData["Title"] = "Merchandise";
+    Layout = "_AdminContentLayout";
+}
+<style>
+    .nav-div {
+        display: flex;
+        padding: 5px 0;
+        align-items: baseline;
+    }
+
+        .nav-div .texts {
+            width: 80px;
+            color: #737679;
+            text-align: center;
+        }
+
+        .nav-div .item {
+            width: calc(100% - 80px);
+        }
+</style>
+<div class="content-wrapper">
+    <section class="content">
+        <div class="container-fluid">
+            <!---/.搜索和筛选数据-->
+            <div class="card card-default color-palette-box" style="top:10px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <form>
+                                <div class="input-group">
+                                    <input type="search" class="form-control form-control-md" placeholder="搜索" />
+                                    <div class="input-group-append">
+                                        <select class=" btn btn-md btn-default" style="width: 100%;">
+                                            <option selected>精准匹配</option>
+                                            <option>模糊匹配</option>
+                                            <option>完全匹配</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-md btn-default"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class=" col-md-12 card-header"></div>
+
+                        <div class="col-md-12">
+                            <div class="nav-div">
+                                <div class="texts "> 商品状态:</div>
+                                <div class="item">
+                                    <ul class="nav nav-pills nav-sidebar" data-widget="treeview" role="menu" data-accordion="false">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link btn-sm active">
+                                                全部
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="btn-sm nav-link">
+                                                在售
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                新品
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="nav-div">
+                                <div class="texts ">排序方式</div>
+                                <div class="item">
+                                    <ul class="nav nav-pills nav-sidebar" data-widget="treeview" role="menu" data-accordion="false">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link active">
+                                                按创建时间
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                按更新时间
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                按商品SUK
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!---./搜索和筛选数据-->
+            <!--/.操作区-->
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div style="display:inline-block">
+                        <a class="btn  dropdown-toggle" style="background-color:#138496;color:white;" data-toggle="dropdown" href="#">
+                            编辑 <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" tabindex="-1" href="#">Action</a>
+                            <a class="dropdown-item" tabindex="-1" href="#">Another action</a>
+                            <a class="dropdown-item" tabindex="-1" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" tabindex="-1" href="#">Separated link</a>
+                        </div>
+                    </div>
+
+                    <div class="float-right">
+                        <div style="display:inline-block">
+                            <a class="btn dropdown-toggle" style="background-color:#138496;color:white;" data-toggle="dropdown" href="#">
+                                导入/导出 <span class="caret"></span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" tabindex="-1" href="#">导出数据</a>
+                                <a class="dropdown-item" tabindex="-1" href="#">导出</a>
+                                <a class="dropdown-item" tabindex="-1" href="#">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" tabindex="-1" href="#">导入</a>
+                            </div>
+                        </div>
+
+                        <div style="display:inline-block">
+                            <a class="btn dropdown-toggle" style="background-color:#ffc107;color:white; " data-toggle="dropdown" href="#">
+                                添加商品 <span class="caret"></span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" tabindex="-1" asp-action="@ControllerConstants.Merchandise.Actions.AddMerchandise" asp-controller="@ControllerConstants.Merchandise.Controller">添加商品</a>
+                                <a class="dropdown-item" tabindex="-1" href="#">添加suk</a>
+                                <a class="dropdown-item" tabindex="-1" href="#">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" tabindex="-1" href="#">导入</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--./操作区-->
+            <!---/.数据展示-->
+            <div class="row" style="background-color:white;margin-top:10px;">
+                <!---筛选数据-->
+                <div class="col-md-12">
+                    <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true">单个suk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="false">多个suk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="messages-tab" data-toggle="pill" href="#messages" role="tab" aria-controls="messages" aria-selected="false">加工</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="settings-tab" data-toggle="pill" href="#settings" role="tab" aria-controls="settings" aria-selected="false">有异常</a>
+                        </li>
+                    </ul>
+                </div>
+                <!---筛选数据-->
+                <!--展示数据-->
+                <div class="col-md-12">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                                                <i class="far fa-square"></i>
+                                            </button>
+                                        </th>
+                                        <th>图片</th>
+                                        <th>商品</th>
+                                        <th>参考值$</th>
+                                        <th>重量</th>
+                                        <th>状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" id="check1" style="margin-left: 7px;" />
+                                            <label for="check1"></label>
+                                        </td>
+                                        <td>图片</td>
+                                        <td>sk</td>
+                                        <td>50$</td>
+                                        <td>56.45KG</td>
+                                        <td>新品</td>
+                                        <td>
+                                            <a asp-action="@ControllerConstants.Merchandise.Actions.Editor" asp-controller="@ControllerConstants.Merchandise.Controller" class="btn btn-info btn-sm">编辑</a>
+                                            <a class="btn  btn-danger btn-sm">删除</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">多个suk</div>
+
+                        <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab">加工</div>
+
+                        <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">有异常</div>
+                    </div>
+                </div>
+                <!--展示数据-->
+            </div>
+            <!---./数据展示-->
+
+        </div>
+    </section>
+</div>

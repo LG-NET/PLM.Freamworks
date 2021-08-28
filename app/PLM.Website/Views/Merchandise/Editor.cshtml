@@ -1,0 +1,405 @@
+﻿@{
+    ViewData["Title"] = "Editor";
+    Layout = "_AdminContentLayout";
+}
+<div class="content-wrapper">
+    <section class="content">
+        <div class="container-fluid">
+            <!--/.头部切换-->
+            <div class="card card-default color-palette-box">
+                <div class="card-body" style="margin-top:20px;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">商品信息</a>
+                                    <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">物流与包装</a>
+                                    <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">仓库信息</a>
+                                </div>
+                            </nav>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--./头部切换-->
+            <!--/.内容-->
+            <div class="tab-content" id="nav-tabContent">
+                <!--/.基础信息-->
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="card card-default color-palette-box">
+                        <dvi class="card-header">
+                            <samp class="card-title ">基础信息</samp>
+                        </dvi>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group row">
+                                    <label class="col-sm-1">商品编码:</label>
+                                    <div class="col-sm-11">
+                                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="ss">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-1">商品SUK:</label>
+                                    <div class="col-sm-11">
+                                        <input type="text" readonly class="form-control-plaintext" id="staticEmai2" value="sggg">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-1">商品SUK:</label>
+                                    <div class="col-sm-11">
+                                        <div class="form-group clearfix">
+                                            <div class="icheck-primary d-inline">
+                                                <input type="checkbox" id="checkboxPrimary1" checked="">
+                                                <label for="checkboxPrimary1">
+                                                    商品
+                                                </label>
+                                            </div>
+                                            <div class="icheck-primary d-inline">
+                                                <input type="checkbox" id="checkboxPrimary2">
+                                                <label for="checkboxPrimary2">
+                                                    赠品
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-1">商品状态:</label>
+                                    <div class="col-sm-11 row">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">在售</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option1">
+                                            <label class="form-check-label" for="inlineRadio2">热销</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-1">产品分类:</label>
+                                    <select class="btn  btn-default" style="width:30%">
+                                        <option>大</option>
+                                        <option>小</option>
+                                    </select>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-1">中文名称:</label>
+                                    <div class="col-sm-11">
+                                        <input class="form-control form-control-sm" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-1">英文名称:</label>
+                                    <div class="col-sm-11">
+                                        <input class="form-control form-control-sm" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-1">平台SUK:</label>
+                                    <div class="col-sm-11">
+                                        <div class="form-group">
+                                            <select class="select2" multiple="multiple" data-placeholder="多个SUK,空格或回车" style="width: 100%;">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-1">识别码:</label>
+                                    <div class="col-sm-11">
+                                        <input class="form-control form-control-sm" type="text" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--/.来源url-->
+                    <div class="card card-default color-palette-box">
+                        <div class="card-header">
+                            <samp>来源URL</samp>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label class="col-sm-1">来源URL1:</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <input type="search" class="form-control form-control-md" placeholder="URL" />
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-md btn-default">访问</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--./来源url-->
+                    <!--/.图片-->
+                    <div class="card card-default color-palette-box">
+                        <div class="card-header">
+                            <samp>图片信息</samp>
+                        </div>
+                        <div class="card-body">
+                            <div class="col-md-12 row">
+                                <label class="">选择图片(1/20):</label>
+                            </div>
+                            <div id="actions" class="row">
+                                <div class="col-lg-6">
+                                    <div class="btn-group w-100">
+                                        <span class="btn btn-success col fileinput-button">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Add files</span>
+                                        </span>
+                                        <button type="submit" class="btn btn-primary col start">
+                                            <i class="fas fa-upload"></i>
+                                            <span>Start upload</span>
+                                        </button>
+                                        <button type="reset" class="btn btn-warning col cancel">
+                                            <i class="fas fa-times-circle"></i>
+                                            <span>Cancel upload</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 d-flex align-items-center">
+                                    <div class="fileupload-process w-100">
+                                        <div id="total-progress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                            <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="table table-striped files" id="previews">
+                                <div id="template" class="row mt-2">
+                                    <div class="col-auto">
+                                        <span class="preview"><img src="data:," alt="" data-dz-thumbnail /></span>
+                                    </div>
+                                    <div class="col d-flex align-items-center">
+                                        <p class="mb-0">
+                                            <span class="lead" data-dz-name></span>
+                                            (<span data-dz-size></span>)
+                                        </p>
+                                        <strong class="error text-danger" data-dz-errormessage></strong>
+                                    </div>
+                                    <div class="col-4 d-flex align-items-center">
+                                        <div class="progress progress-striped active w-100" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                            <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto d-flex align-items-center">
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary start">
+                                                <i class="fas fa-upload"></i>
+                                                <span>Start</span>
+                                            </button>
+                                            <button data-dz-remove class="btn btn-warning cancel">
+                                                <i class="fas fa-times-circle"></i>
+                                                <span>Cancel</span>
+                                            </button>
+                                            <button data-dz-remove class="btn btn-danger delete">
+                                                <i class="fas fa-trash"></i>
+                                                <span>Delete</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+                    <!--./图片-->
+                    <!--/.组合信息-->
+                    <div class="card card-default color-palette-box">
+                        <div class="card-header">
+                            <samp>组合信息</samp>
+                        </div>
+                        <div class="card-body">
+                            <div class="col-md-12 row">
+                                <table class="table table-hover text-nowrap">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="col-md-6 row">
+                                                    <div><img src="~/image/avatar4.png" width="100" height="50" /></div>
+                                                    <div class="col-md-3">
+                                                        <div>sss</div>
+                                                        <div>测试</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group col-md-6">
+                                                    <div class="row">
+                                                        <samp>单位个数</samp>
+                                                        <input type="text" class="input" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--./组合信息-->
+                </div>
+                <!--./基础信息-->
+                <!--/.物流与包装-->
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="card card-default card-palette-box">
+                        <div class="card-header">
+                            <samp>报关信息</samp>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label class="col-sm-2">报关英文名:</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control form-control-sm" type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2">报关价格:</label>
+                                <div class="col-sm-6 input-group sm-3">
+                                    <input class="form-control " type="text" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">USB</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2">报关重量:</label>
+                                <div class="col-sm-6 input-group sm-3">
+                                    <input type="text" class="form-control">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">g</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2">材质:</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control form-control-sm" type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2">用途:</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control form-control-sm" type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2">海关编码:</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control form-control-sm" type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2">危险运输品:</label>
+                                <div class="col-sm-10">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">无</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option1">
+                                        <label class="form-check-label" for="inlineRadio2">含电(内电)</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1">
+                                        <label class="form-check-label" for="inlineRadio3">液体(特货)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-default card-palette-box">
+                        <div class="card-header">
+                            <samp>重量信息</samp>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="col-6">
+                                    <label>商品净重:</label>
+                                    <input type="text" class="form-control" placeholder="单位g">
+                                </div>
+                                <div class="col-6">
+                                    <label>允许称重误差:</label>
+                                    <input type="text" class="form-control" placeholder="单位g">
+                                </div>
+                            </div>
+                            <div>
+                                <label>商品尺寸:</label>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-2">
+                                    <input type="text" class="form-control" placeholder="长">
+                                </div>
+                                <div class="col-2">
+                                    <input type="text" class="form-control" placeholder="宽">
+                                </div>
+                                <div class="col-2">
+                                    <input type="text" class="form-control" placeholder="高">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-default card-palette-box">
+                        <div class="card-header">
+                            <samp>包裹信息</samp>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="col-6">
+                                    <label>包材名称:</label>
+                                    <select class="js-example-theme-single" style="width: 75%">
+                                        <option value="one">选择包材</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-6">
+                                    <label>包材数量:</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--./物流与包装-->
+                <!--/.仓库信息-->
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="card card-default card-palette-box">
+                        <div class="card-header">
+                            <samp>仓库信息</samp>
+                        </div>
+                        <div class="card-body">
+                            <div class="col-md-12">
+                                <table id="example2" class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>仓库名称</th>
+                                            <th>仓库库存</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>上海仓</td>
+                                            <td>
+                                                400
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--./仓库信息-->
+            </div>
+            <!--./内容-->
+            <div class="clearfix">
+                <button type="button" class="btn btn-light float-right">关闭</button>
+                <button type="button" class="btn btn-danger float-right">保存</button>
+            </div>
+        </div>
+    </section>
+</div>

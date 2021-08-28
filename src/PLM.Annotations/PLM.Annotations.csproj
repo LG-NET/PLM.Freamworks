@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>PLM</RootNamespace>
+    <AssemblyName>PLM</AssemblyName>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PackageId>PLM.Annotations</PackageId>
+    <Title>PLM.Annotations</Title>
+    <Description>PLM.Annotations</Description>
+    <PackageTags>prealm</PackageTags>
+  </PropertyGroup>
+  
+</Project>
+

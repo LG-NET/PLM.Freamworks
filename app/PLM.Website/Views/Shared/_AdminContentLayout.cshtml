@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PRealm Log in</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
+    <link rel="stylesheet" href="~/css/fontawesome-free/all.min.css">
+    <link rel="stylesheet" href="~/css/fontawesome-free/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/overlayScrollbars/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="~/css/adminlte/adminlte.min.css">
+    <link rel="stylesheet" href="~/css/select2/select2.min.css">
+    <link rel="stylesheet" href="~/css/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <link rel="stylesheet" href="~/css/dropzone/min//dropzone.min.css" />
+</head>
+<body class="hold-transition sidebar-mini layout-fixed" data-panel-auto-height-mode="height">
+    <div class="wrapper">
+        @RenderBody()
+    </div>
+    <script src="~/js/jquery/jquery.min.js"></script>
+    <script src="~/js/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <script src="~/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="~/js/overlayScrollbars/jquery.overlayScrollbars.min.js"></script>
+    <script src="~/js/adminlte/adminlte.min.js"></script>
+    <script src="~/js/adminlte/demo.js"></script>
+    <script src="~/js/select2/select2.full.min.js"></script>
+    <script src="~/js/dropzone/min/dropzone.min.js"></script>
+    <script>
+        var data = [
+            {
+                id: 0,
+                text: 'enhancement'
+            },
+            {
+                id: 1,
+                text: 'bug'
+            },
+            {
+                id: 2,
+                text: 'duplicate'
+            },
+            {
+                id: 3,
+                text: 'invalid'
+            },
+            {
+                id: 4,
+                text: 'wontfix'
+            }
+        ];
+        $(function ()
+        {
+            $('.select2bs4').select2({
+                theme: 'bootstrap4',
+                data: data
+            })
+        })
+
+        $(".select2").select2({
+            @*createTag: function (params)
+            {
+                if  params.term.indexOf('@') === -1)
+                {
+                    return null;
+                }
+            },*@
+            tags: true,
+            tokenSeparators: [',', ' '],
+            maximumSelectionLength: 5,
+            templateSelection: function (data, container) {
+                $(container).css("background-color", 'blue');
+                return data.text;
+            }
+        })
+    </script>
+</body>
+</html>

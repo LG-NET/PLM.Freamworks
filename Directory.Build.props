@@ -1,0 +1,76 @@
+<Project>
+  <!-- 设置变量 -->
+  <PropertyGroup>
+    <AuthorNameOne>OceanTour</AuthorNameOne>
+    <SourceRoot>$(MSBuildThisFileDirectory)</SourceRoot>
+  </PropertyGroup>
+
+  <!-- 导入版本控制文件 -->
+  <Import Project="$(SourceRoot)/build/Dependencies.props" />
+
+  <!-- 设置程序集相关新 -->
+  <PropertyGroup>
+    <Authors>$(AuthorNameOne)</Authors>
+    <Product>$(AuthorNameOne)</Product>
+    <Company>$(AuthorNameOne) Development(2818482346@qq.com)</Company>
+    <Copyright>Copyright © 2021 $(AuthorNameOne) Personal Ownership</Copyright>
+    <RepositoryType>GIT</RepositoryType>
+    <RepositoryUrl>git@github.com:oceantour/OT.Freamworks.git</RepositoryUrl>
+    <PackageProjectUrl>git@github.com:oceantour/OT.Freamworks.git</PackageProjectUrl>
+    <NeutralLanguage>zh-CN</NeutralLanguage>
+  </PropertyGroup>
+
+  <!-- 解决方案与目标框架 -->
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+
+  <!-- 程序集签名 -->
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(SourceRoot)/build/SiroKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <!-- 编译时参数 -->
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ImportLibs>netcore</ImportLibs>
+  </PropertyGroup>
+
+  <!-- 编译时警告 -->
+  <PropertyGroup>
+    <DebugType>portable</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <TieredCompilation>true</TieredCompilation>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>612,618,CA1416</WarningsNotAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net5.0|AnyCPU'">
+    <DebugSymbols>True</DebugSymbols>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net5.0|AnyCPU'">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <!-- 版本号 (主要.次要.构建.修订) -->
+  <PropertyGroup>
+    <FileVersion>1.0.0.1</FileVersion>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+		<VersionPrefix Condition=" '$(VersionPrefix)'=='' ">1.0.0</VersionPrefix>
+  </PropertyGroup>
+  
+	<PropertyGroup>
+		<VersionSuffix Condition=" '$(VersionSuffix)'=='' ">xm</VersionSuffix>
+		<VersionSuffix Condition=" '$(VersionDateSuffix)'!='' ">$(VersionSuffix)-$(VersionDateSuffix)</VersionSuffix>
+	</PropertyGroup>
+
+</Project>

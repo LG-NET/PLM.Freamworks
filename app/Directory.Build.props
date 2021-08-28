@@ -1,0 +1,21 @@
+<Project>
+  <!-- 导入上级目录的Directory文件 -->
+  <Import Project="..\Directory.Build.props"/>
+
+  <!-- 不为程序集签名 -->
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  
+  <!-- 根据编译方式判断是否允许生成NuGet包 -->
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <IsPackable>false</IsPackable>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  
+</Project>
